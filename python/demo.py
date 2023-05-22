@@ -18,7 +18,7 @@ if __name__ == '__main__':
     h, w, _ = normal_gt.shape
 
     # get depth
-    depth, mask = get_depth(depth_path, h, w)
+    depth, mask = get_depth(depth_path, h, w) # float64
     u_map = np.ones((h, 1)) * np.arange(1, w + 1) - u0  # u-u0
     v_map = np.arange(1, h + 1).reshape(h, 1) * np.ones((1, w)) - v0  # v-v0
 
@@ -60,3 +60,4 @@ if __name__ == '__main__':
     fig = plt.imshow(error_map, cmap=platte)
     plt.colorbar(fig)
     print(f"ea of [{VERSION}]:", ea)
+    plt.show()
