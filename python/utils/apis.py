@@ -11,7 +11,7 @@ import numpy as np
 def get_cam_params(calib_path):
     with open(calib_path, 'r') as f:
         data = f.read()
-        params = list(map(int, (data.split())))[:-1]
+        params = list(map(np.float32, (data.split())))[:-1]
     return params
 
 
